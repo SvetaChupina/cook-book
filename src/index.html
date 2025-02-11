@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список рецептов</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+</head>
+<body>
+  <div class="cont">
+    <h1>Список рецептов</h1>
+    <button id="addRecipeButton">Добавить рецепт</button>
+    <ul id="recipeList"></ul>
+    <!-- Окно для добавления/редактирования рецепта -->
+    <div id="recipeModal" style="display:none;">
+        <h2 id="modalTitle">Добавить Рецепт</h2>
+        <input type="text" id="recipeTitle" maxlength="15" placeholder="Введите название рецепта">
+        <h3 id="h3">Загрузить фото рецепта</h3>
+        <img id="imagePreview" src="" alt="">
+        <input type="file" accept="image/*" id="recipeImage">
+        <div id="ingredientContainer">
+          <div id="ingredient">
+            <input type="text" id="nameIngredient" placeholder="Название ингридиента">
+            <input type="number" id="quantity" step="0.5" min="0" placeholder="Кол-во">
+                <input id="options" list="ingredientOptions" name='inputOption' placeholder="ед.изм">
+                <datalist id="ingredientOptions">
+                    <option value="ч.л"></option>
+                    <option value="ст.л"></option>
+                    <option value="ст"></option>
+                    <option value="гр"></option>
+                    <option value="мл"></option>
+                    <option value="л"></option>
+                    <option value="шт"></option>
+                </datalist>
+                <button id="del"></button>
+            </div>
+        </div>
+        <button id="add">Добавить ингредиент</button>
+        <h2>Способ приготовления</h2>
+        <ol id="instruction">
+            <li id="step">
+              <textarea id="description" placeholder="Описание"></textarea>
+              <button id="del"></button>
+            </li>
+        </ol>
+        <button id="addInstruction">Добавить шаг</button>
+        <div id="btns">
+          <button id="saveRecipeButton">✔</button>
+          <button id="closeModalButton">×</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
